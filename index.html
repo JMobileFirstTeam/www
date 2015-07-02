@@ -1,0 +1,44 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+    <meta charset="gb2312" /> 
+    <meta name="viewport" content="width=device-width, initial-scale=1"> 
+    <title>myapp</title> 
+    <!--加载jqm css样式-->
+    <link rel="stylesheet"  href="css/themes/default/jquery.mobile-1.4.0-rc.1.min.css" /> 
+    <!--加载jquery-->
+    <script src="js/jquery.js"></script> 
+    <!--加载jquery mobile-->
+    <script src="js/jquery.mobile-1.4.0-rc.1.js"></script>  
+    <script src="js/ajax.js"></script>  
+    <script src="js/json2.js"></script>
+</head>  
+<body> 
+	
+<div data-role="page" id="pagehead" data-fullscreen="true"><!--data-fullscreen 设置全屏-->
+      <div data-role="header" data-theme="b" data-position="inline"><!--data-position="inline" 设置以流的方式显示-->
+         <h1>登陆页</h1> 
+      </div><!-- /header -->
+  
+      <div data-role="content" >    
+        <form id="ajaxForm"> 
+            <div data-role="fieldcontain" data-theme="b" > 
+               <label for="username">Username:</label> 
+               <input type="text" name="username" id="username" data-mini="true"/> 
+               <label for="password">Password:</label> 
+               <input type="password" name="password" id="password" data-mini="true"/> 
+                <h3 id="notification"></h3> 
+                <button id="submit" type="submit">Submit</button> 
+            </div>  
+        </form>  
+      </div><!-- /content -->
+  
+    <div data-role="footer"  data-position="fixed"> 
+        <h4>Page Footer</h4> 
+    </div><!-- /footer -->
+</div><!-- /page -->
+
+
+  
+</body> 
+</html>

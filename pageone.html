@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="gb2312" /> 
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.css">
+<script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js"></script>
+</head>
+<body>
+
+<div data-role="page" id="home" data-url="home" tabindex="0" class="ui-page ui-body-c ui-page-active" style="background: #FFF;">
+  <div data-role="header" data-theme="b">
+    <a href="javascript:history.go(-1)" data-role="button" data-icon="home">首页</a>
+    <h1>欢迎访问我的主页</h1>
+    <a href="#" data-role="button" data-icon="search">搜索</a>
+  </div>
+  
+ 	<div data-role="content" align="center" class="ui-content" style="padding: 0px;" role="main"> 
+		      <img src="img/back.jpg" style="width: 100%; height: auto;">
+             <div class="swiper-container">
+	              <div id="tpxwSwiper" class="swiper-wrapper"
+	                  data-bind="foreach: list">
+	                  <div class="swiper-slide">
+	                      <a data-bind="click:showDetail"> <img
+	                          data-bind="attr:{'src':imgSrc}" class="swiper-image" />
+	                          <!-- <div>
+	                              <span class="title" data-bind="text: contentTitle"></span>
+	                          </div> -->
+	                      </a>
+	                  </div>
+	              </div>
+	              <div class="pagination"></div>
+	              <!-- <div class="more">
+                    <a href="#">more</a>
+                  </div> -->
+             </div>
+			 <!--<span style="float: right;color: #7b7b7b;;line-height: 2em;"><strong id="chName">Hi!</strong></span>-->
+       <!--traveler-->
+			 <div data-role="popup" id="mailpopupDialog" data-overlay-theme="a" data-theme="c" data-dismissible="false" style="max-width:400px;" class="ui-corner-all">
+				<div data-role="header" data-theme="f" class="ui-corner-top">
+					<h1>提示信息</h1>
+				</div>
+				<div data-role="content" data-theme="d" class="ui-corner-bottom ui-content">
+					<p style="line-height:2em;">您当前没有安装traveler客户端,是否打开下载页面？</p>
+					<div class="ui-grid-a">
+							<div class="ui-block-a" style="padding-bottom:5px;" align="center">
+								<a data-role="button" value="submit" onclick="loadmaildown()" data-mini='true' data-theme="f">确　定</a>
+							</div>
+							<div class="ui-block-b" style="padding-bottom:5px;" align="center">
+								<a data-role="button" value="reject" onclick='$( "#mailpopupDialog" ).popup( "close" )' data-mini='true' data-theme="f">取　消</a>
+							</div>
+					</div>
+				</div>
+			</div>
+			<!--Connections  -->
+             
+			<div class="ui-grid-b">
+				<div class="ui-block-a">
+					<a href="javascript:void(0)" onclick="loadContact()" class="ui-link"> <img class="moduleIcon" src="img/oa.png" width="58" height="58">
+					</a> <br> <span style="color: #434343"><strong>办公OA</strong></span>
+				</div>
+				<div class="ui-block-b">
+					 <a href="javascript:void(0)" onclick="loadConnections()" class="ui-link"> <img class="moduleIcon" src="img/ca.png" width="58" height="58">
+					</a> <br> <span style="color: #434343"><strong>通信CA</strong></span> 
+				</div>
+				<div class="ui-block-c">
+					<a href="javascript:void(0);" onclick="openmail()" class="ui-link"> <img class="moduleIcon" src="img/ba.png" width="58" height="58">
+					</a> <br> <span style="color: #434343"><strong>楼宇BA</strong></span>
+				</div>
+			</div>
+			<div class="ui-grid-b">
+				<div class="ui-block-a">
+					<a href="javascript:void(0)" onclick="loadContact1()" class="ui-link"> <img class="moduleIcon" src="img/fa.png" width="58" height="58">
+					</a> <br> <span style="color: #434343"><strong>消防FA</strong></span>
+				</div>
+				<div class="ui-block-b">
+					 <a href="javascript:void(0)" onclick="loadConnections()" class="ui-link"> <img class="moduleIcon" src="img/sa.png" width="58" height="58">
+					</a> <br> <span style="color: #434343"><strong>安防SA</strong></span> 
+				</div>
+				<div class="ui-block-c">
+					<a href="javascript:void(0);" onclick="openmail()" class="ui-link"> <img class="moduleIcon" src="img/car.png" width="58" height="58">
+					</a> <br> <span style="color: #434343"><strong>停车场</strong></span>
+				</div>
+			</div>
+			<div class="ui-grid-b">
+				<div class="ui-block-a">
+					<a href="javascript:void(0)" onclick="loadContact2()" class="ui-link"> <img class="moduleIcon" src="img/navigation.png" width="58" height="58">
+					</a> <br> <span style="color: #434343"><strong>导航</strong></span>
+				</div>
+				<div class="ui-block-b">
+					 <a href="javascript:void(0)" onclick="loadMeeting()" class="ui-link"> <img class="moduleIcon" src="img/Meeting.png" width="58" height="58">
+					</a> <br> <span style="color: #434343"><strong>会议</strong></span> 
+				</div>
+				<div class="ui-block-c">
+					<a href="javascript:void(0);" onclick="openmail()" class="ui-link"> <img class="moduleIcon" src="img/esaving.png" width="58" height="58">
+					</a> <br> <span style="color: #434343"><strong>节能</strong></span>
+				</div>
+			</div>
+			
+			<br>
+  </div>
+  <div data-role="footer" data-theme="e" data-position="fixed" data-id="toolbar">
+    <a href="http://d.weibo.com/?c=spr_sinamktbd_bd_baidub_weibo_t001" data-role="button" data-icon="plus">转播到新浪微博</a>
+    <a href="http://t.qq.com/" data-role="button" data-icon="plus">转播到腾讯微博</a>
+  </div>
+</div>
+
+</body>
+
+<script type="text/javascript">
+		function loadContact() {
+		window.location="page-oa.html";
+	}
+	
+	
+		function loadMeeting() {
+		window.location="page-meeting.html";
+	}
+</script>
+</html>
