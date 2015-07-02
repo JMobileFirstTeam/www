@@ -1,12 +1,13 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-	<meta charset="gb2312" /> 
+	<meta charset="utf-8" />
 	<title>jQM Meeting App</title>
 	<link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css" />
 	<script src="js-meeting/jquery-1.11.3.min.js"></script>
 	<script type="text/javascript" src="js-meeting/json2.js"></script>
 	<script type="text/javascript" src="js-meeting/index.js"></script>
+	<script type="text/javascript" src="js-meeting/getweather.js"></script>
 	<script src="js-meeting/jquery.mobile-1.4.5.min.js"></script>
 	<script src="js-meeting/jquery.mobile.nestedlists.js"></script>
 	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
@@ -15,12 +16,18 @@
 	<!-- 主页 -->
 	<div data-role="page" id="home">
 		<div data-role="content">
-			<p><img src="img/logo.png" alt="jQM Conference" width="300" height="62" align="middle"></p>
-			<h3>November 5th</h3>
-			<div class="ui-grid-a">
-				<div class="ui-block-a"><a href="http://www.baidu.com" data-role="button" data-theme="b">Baidu</a></div>
-				<div class="ui-block-b"><a href="http://www.xiami.com" data-role="button" data-theme="b">Xiami</a></div>
-			</div>
+			<label for="cities">Weathers</label>
+			<div data-role="controlgroup" data-type="horizontal">
+				<select id="cities" name="cities">
+					<option value="1">北京</option>
+					<option value="1">上海</option>
+					<option value="1">天津</option>
+					<option value="1">重庆</option>
+				</select>
+				<a href="javascript:getWeatherAjax()" data-role="button">Get Weather</a>
+			</div>			
+			<ul data-role="listview" data-inset="true" id="weather-details">
+			</ul>
 		</div>
 		<div data-role="footer" data-position="fixed" data-id="toolbar">
 			<div data-role="navbar">
