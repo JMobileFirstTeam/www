@@ -22,7 +22,7 @@ $(document).bind("mobileinit", function() {
 });
 
 function loadSessionsAjax() {
-	var url = "http://192.16.201.98/MeetingApp/data.php";
+	var url = "http://192.16.201.97/MeetingApp/data.php";
 	$.ajax({
 		type : "post",
 		url : url,
@@ -34,22 +34,6 @@ function loadSessionsAjax() {
 			$("#console").html("Schedule update could not be downloaded");
 		}
 	});
-
- //    var url = "http://192.16.201.238/MeetingApp/data.php";
-	// $.ajax({
-	// 	type : "post",
-	// 	url : url,
-	// 	dataType : "text",
-	// 	success : function(res) {
-	// 		$("#console").html("aaaa");
-	// 		data = JSON.parse(res);
-	// 		$("#username").html(data.n);
-	// 		$("#password").html(data.p);
-	// 	},
-	// 	error : function() {
-	// 		$("#console").html("Schedule update could not be downloaded");
-	// 	}
-	// });
 }
 
 var isFirstLoad = true;
@@ -78,12 +62,6 @@ function showSessions(string) {
 
 	$("#slots").html(html);
 
-	// if (isFirstLoad) {
-	// 	$("#slots").listview();
-	// 	isFirstLoad = false;
-	// } else {
-	// 	$("#slots").listview('refresh');
-	// }
 	$("#slots").listview('refresh');
 }
 
