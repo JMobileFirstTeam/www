@@ -21,8 +21,8 @@ $(function() {
        
         $.ajax({ 
             type : "POST", 
-            url  : "https://192.16.201.163/form.php?",  
-           // url  : "https://localhost/form.php?",  
+           // url  : "https://192.16.200.109/form.php?",  
+            url  : "https://localhost/form.php?",  
             cache : false, 
             data : DAT,
             dataType: "json", 
